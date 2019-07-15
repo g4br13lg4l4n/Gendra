@@ -15,8 +15,8 @@ import Morty from '../../public/icons8-morty-smith-96.png'
   return (
       <Paper>
         <MenuList>
-          <MenuItem><NavLink to="/"><Logo image={Rick}/> Characters</NavLink></MenuItem>
-          <MenuItem><NavLink to="/episodes"><Logo image={Morty}/> Episodes </NavLink></MenuItem>
+          <NavLink to="/"><MenuItem><Logo image={Rick}/> Characters</MenuItem></NavLink>
+          <NavLink to="/episodes"><MenuItem><Logo image={Morty}/> Episodes </MenuItem></NavLink>
         </MenuList>
       </Paper>
   )
