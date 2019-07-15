@@ -19,7 +19,7 @@ const useStyles = makeStyles( theme => ({
   })
 )
 
-export default function ContainerCard(props) {
+ const ContainerCard = (props) => {
   const classes = useStyles()
 
   return (
@@ -30,3 +30,5 @@ export default function ContainerCard(props) {
     </Grid>
   )
 }
+
+export default ContainerCard

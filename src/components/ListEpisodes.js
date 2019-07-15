@@ -32,16 +32,12 @@ export default class ListCharacter extends Component {
   }
 
   async loadCharacter() {
-    if(this.props.search){
-      console.log('entra')
-    }else {
-      let resp = await axios.get(`https://rickandmortyapi.com/api/character/`)
-      this.setState({
-        character: resp.data.results,
-        info: resp.data.info,
-        loading: false
-      })
-    }
+    let resp = await axios.get(`https://rickandmortyapi.com/api/character/`)
+    this.setState({
+      character: resp.data.results,
+      info: resp.data.info,
+      loading: false
+    })
   }
 
   renderCards() {
@@ -127,7 +123,7 @@ export default class ListCharacter extends Component {
           (
           <div>
             <Typography variant="h2" gutterBottom>
-              Characters
+              Episodes
             </Typography>
             <Grid container spacing={3}>
               { this.renderCards() }

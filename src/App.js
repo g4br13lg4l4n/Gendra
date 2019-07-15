@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
-import Container from '@material-ui/core/Container'
-import NavBar from './components/NavBar.js'
-import ListCharacter from './components/ListCharacter'
-import Box from '@material-ui/core/Box'
-import './App.css'
+import Characters from './pages/Characters'
+import Episodes from './pages/Episodes'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Layout from  './components/Layout'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar/>
-        <Box m={4}>
-          <Container>
-            <ListCharacter/>
-          </Container>
-        </Box>
+        <Router>
+          <Layout>
+            <Switch>
+              <Route exact path='/' component={Characters} />
+              <Route path='/episodes' component={Episodes} />
+            </Switch>
+          </Layout>
+        </Router>
       </div>
-    );
+    )
   }
 }
 

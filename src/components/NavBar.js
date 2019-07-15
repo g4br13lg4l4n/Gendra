@@ -4,7 +4,9 @@ import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
 import Toolbar from '@material-ui/core/Toolbar'
 import AppBar from '@material-ui/core/AppBar'
+import Rick from '../../public/icon-256x256.png'
 import Logo from './Logo'
+
 
 const useStyles = makeStyles(theme => ({
   search: {
@@ -41,21 +43,24 @@ const useStyles = makeStyles(theme => ({
       width: 200,
     },
   }
-}));
+}))
 
-export default function SimpleAppBar(props) {
+ const SimpleAppBar = (props) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
       <AppBar position="static" color="inherit">
         <Toolbar>
-        <Logo/>
+        <Logo image={Rick}/>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
               placeholder="Search…"
+              type='text'
+              name='searchVal'
+              onChange={props.handleSearch}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -65,5 +70,7 @@ export default function SimpleAppBar(props) {
         </Toolbar>
       </AppBar>
     </div>
-  );
+  )
 }
+
+export default SimpleAppBar

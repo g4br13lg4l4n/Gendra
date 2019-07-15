@@ -1,5 +1,4 @@
 import React from 'react'
-import Icon from '../../public/icon-256x256.png'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
@@ -10,7 +9,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-export default function Logo () {
+ const Logo = (props) => {
   const style = useStyles()
-  return (<img src={Icon} className={style.imageIcon} alt="Logo"/>)
+  return (<img src={props.image} className={style.imageIcon} alt="Logo"/>)
 }
+
+export default Logo
